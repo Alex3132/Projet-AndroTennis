@@ -1,0 +1,71 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml:1:1-15:12
+	package
+		ADDED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml:3:5-34
+		INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml:1:11-69
+	android:versionCode
+		INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml
+application
+ADDED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml:6:5-13:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Unkof\.android\build-cache\69deeee7c044fc2270c4bc2a2892e17da9320c30\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Unkof\.android\build-cache\08d1d24d3c994451031073d161f576af62fd3fde\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Unkof\.android\build-cache\6a27d71c93523d7fa291c3612bed82ea96b14d19\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Unkof\.android\build-cache\4ce8db4b7ef757053fe24a650a01075567d84dca\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Unkof\.android\build-cache\bdf0afb379b85c0fd74f17b89cb634d774249b22\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Unkof\.android\build-cache\c317930ab34dd42fdb216e121205f3a6fe574fa2\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Unkof\.android\build-cache\0ffff295cc0fbb77b8fd72cefc8634952f184467\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Unkof\.android\build-cache\a6d2cdcd14ac7d6efdd08c5fa91fc48e23b35110\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Unkof\.android\build-cache\0a1927298ed466390ee6495c0474a5666744b5ff\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml:7:9-41
+	android:supportsRtl
+		ADDED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml:10:9-35
+	android:roundIcon
+		ADDED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml:9:9-54
+	android:allowBackup
+		ADDED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml:6:18-44
+	android:icon
+		ADDED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml:8:9-43
+	android:theme
+		ADDED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml:11:9-40
+uses-sdk
+INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Unkof\.android\build-cache\69deeee7c044fc2270c4bc2a2892e17da9320c30\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Unkof\.android\build-cache\08d1d24d3c994451031073d161f576af62fd3fde\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Unkof\.android\build-cache\6a27d71c93523d7fa291c3612bed82ea96b14d19\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Unkof\.android\build-cache\4ce8db4b7ef757053fe24a650a01075567d84dca\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Unkof\.android\build-cache\bdf0afb379b85c0fd74f17b89cb634d774249b22\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Unkof\.android\build-cache\c317930ab34dd42fdb216e121205f3a6fe574fa2\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Unkof\.android\build-cache\0ffff295cc0fbb77b8fd72cefc8634952f184467\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Unkof\.android\build-cache\a6d2cdcd14ac7d6efdd08c5fa91fc48e23b35110\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Unkof\.android\build-cache\0a1927298ed466390ee6495c0474a5666744b5ff\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Unkof\.android\build-cache\69deeee7c044fc2270c4bc2a2892e17da9320c30\output\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Unkof_Src_Android\AndroTennis\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Unkof\.android\build-cache\69deeee7c044fc2270c4bc2a2892e17da9320c30\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Unkof\.android\build-cache\08d1d24d3c994451031073d161f576af62fd3fde\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Unkof\.android\build-cache\6a27d71c93523d7fa291c3612bed82ea96b14d19\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Unkof\.android\build-cache\4ce8db4b7ef757053fe24a650a01075567d84dca\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Unkof\.android\build-cache\bdf0afb379b85c0fd74f17b89cb634d774249b22\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Unkof\.android\build-cache\c317930ab34dd42fdb216e121205f3a6fe574fa2\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Unkof\.android\build-cache\0ffff295cc0fbb77b8fd72cefc8634952f184467\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Unkof\.android\build-cache\a6d2cdcd14ac7d6efdd08c5fa91fc48e23b35110\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Unkof\.android\build-cache\0a1927298ed466390ee6495c0474a5666744b5ff\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Unkof\.android\build-cache\69deeee7c044fc2270c4bc2a2892e17da9320c30\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Unkof\.android\build-cache\69deeee7c044fc2270c4bc2a2892e17da9320c30\output\AndroidManifest.xml:26:9-47
