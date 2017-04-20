@@ -1,6 +1,7 @@
 package fr.ldnr.androtennis;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Menu;
@@ -54,7 +55,26 @@ setContentView(R.layout.home);
                 return false;
         }
 
+    }
 
+    public void OnAddPerformButtonClicked(View view){
+
+        Intent intent = new Intent(HomeActivity.this, AddPerformActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void onAboutButtonClicked(View view){
+
+        Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void onSeePerformButtonClicked(View view){
+
+        Intent intent = new Intent(HomeActivity.this, PerformActivity.class);
+        startActivity(intent);
     }
 }
 
