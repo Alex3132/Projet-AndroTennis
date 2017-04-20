@@ -39,6 +39,7 @@
             />
 
     <TextView
+        android:id="@+id/home_text"
         android:text="@string/home_text"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -61,7 +62,7 @@
             >
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button_about"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
@@ -94,40 +95,47 @@
                 >
 
                 <TextView
+                    android:id="@+id/last_add_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textAlignment="center" />
 
                 <TextView
+                    android:id="@+id/last_add_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textAlignment="center"/>
 
                 <TextView
+                    android:id="@+id/last_add_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textAlignment="center"/>
 
                 <TextView
+                    android:id="@+id/last_add_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textAlignment="center"/>
 
                 <TextView
+                    android:id="@+id/last_add_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textAlignment="center"/>
 
                 <Button
+                    android:id="@+id/home_add_perform"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/home_add_perform"/>
                 <Button
+                    android:id="@+id/home_see_perform"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/home_see_perform"/>

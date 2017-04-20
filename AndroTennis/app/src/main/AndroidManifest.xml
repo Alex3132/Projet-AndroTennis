@@ -22,6 +22,9 @@
         </activity>
         <activity android:name=".PerformActivity"></activity>
         <activity android:name=".HistoricActivity"></activity>
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".AddPerformActivity"></activity>
+        
     </application>
 
 

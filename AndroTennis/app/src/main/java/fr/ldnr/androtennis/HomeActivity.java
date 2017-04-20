@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+
+import misc.MenuNavigation;
 
 
 /**
@@ -26,6 +29,26 @@ setContentView(R.layout.home);
 
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.home_menu_histo:
+                MenuNavigation.goToActivity(HomeActivity.this, HistoricActivity.class);
+            return true;
+
+            case R.id.home_menu_perform:
+                MenuNavigation.goToActivity(HomeActivity.this, PerformActivity.class);
+                return true;
+
+            default :
+                return false;
+        }
+
+
     }
 }
 
