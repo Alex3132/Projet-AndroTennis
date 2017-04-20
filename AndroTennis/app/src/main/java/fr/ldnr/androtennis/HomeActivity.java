@@ -44,6 +44,12 @@ setContentView(R.layout.home);
                 MenuNavigation.goToActivity(HomeActivity.this, PerformActivity.class);
                 return true;
 
+            case R.id.home_menu_export:
+                /*TODO : Add export code */
+                return true;
+
+            case R.id.home_menu_welcome:
+                MenuNavigation.goToActivity(HomeActivity.this, HomeActivity.class);
             default :
                 return false;
         }
