@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:title="@string/app_name" android:id="@+id/home_menu_welcome"></item>
-    <item android:title="@string/app_name" android:id="@+id/home_menu_perform"></item>
-    <item android:title="@string/app_name" android:id="@+id/home_menu_histo"></item>
-    <item android:title="@string/app_name" android:id="@+id/home_menu_export"></item>
+<item android:title="@string/menu_home" android:id="@+id/home_menu_welcome"></item>
+    <item android:title="@string/menu_perform" android:id="@+id/home_menu_perform"></item>
+    <item android:title="@string/menu_hist" android:id="@+id/home_menu_histo"></item>
+    <item android:title="@string/menu_export" android:id="@+id/home_menu_export"></item>
 </menu>
