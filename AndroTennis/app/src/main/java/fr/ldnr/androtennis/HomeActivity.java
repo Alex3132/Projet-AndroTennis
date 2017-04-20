@@ -2,6 +2,7 @@ package fr.ldnr.androtennis;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Menu;
@@ -9,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import misc.MenuNavigation;
+
+import static android.view.View.GONE;
 
 
 /**
@@ -23,6 +26,13 @@ public class HomeActivity extends Activity{
 
 
 setContentView(R.layout.home);
+
+        //for api 11 minimum
+        View home = findViewById(R.id.home_buttons);
+        if(Build.VERSION.SDK_INT>=11){
+
+            home.setVisibility(GONE);
+        }
     }
 
     @Override
@@ -59,22 +69,32 @@ setContentView(R.layout.home);
 
     public void OnAddPerformButtonClicked(View view){
 
-        Intent intent = new Intent(HomeActivity.this, AddPerformActivity.class);
-        startActivity(intent);
+        MenuNavigation.goToActivity(HomeActivity.this, AddPerformActivity.class);
 
     }
 
     public void onAboutButtonClicked(View view){
 
-        Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
-        startActivity(intent);
-
+        MenuNavigation.goToActivity(HomeActivity.this,AboutActivity.class);
     }
 
     public void onSeePerformButtonClicked(View view){
+MenuNavigation.goToActivity(HomeActivity.this,PerformActivity.class);
+    }
 
-        Intent intent = new Intent(HomeActivity.this, PerformActivity.class);
-        startActivity(intent);
+    public void onWelcomeButtonClicked(View view){
+
+
+    }
+
+    public void onHistoricButtonClicked(View view){
+        MenuNavigation.goToActivity(HomeActivity.this, HistoricActivity.class);
+
+    }
+
+    public void onExportButtonClicked(View view){
+
+        /*TODO: Add export code*/
     }
 }
 
