@@ -66,7 +66,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:text="@string/home_about" />
+                android:text="@string/home_about"
+                android:onClick="onAboutButtonClicked"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -133,12 +134,14 @@
                     android:id="@+id/home_add_perform"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/home_add_perform"/>
+                    android:text="@string/home_add_perform"
+                    android:onClick="OnAddPerformButtonClicked"/>
                 <Button
                     android:id="@+id/home_see_perform"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/home_see_perform"/>
+                    android:text="@string/home_see_perform"
+                    android:onClick="onSeePerformButtonClicked"/>
 
             </LinearLayout></LinearLayout>
 
