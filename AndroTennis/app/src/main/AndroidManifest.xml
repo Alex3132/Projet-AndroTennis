@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         >
 
-        <activity android:name=".HomeActivity">
+        <activity android:name=".HomeActivity" android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
@@ -20,11 +20,11 @@
 
             </intent-filter>
         </activity>
-        <activity android:name=".PerformActivity"></activity>
-        <activity android:name=".HistoricActivity"></activity>
-        <activity android:name=".AboutActivity"></activity>
-        <activity android:name=".AddPerformActivity"></activity>
-        
+        <activity android:name=".PerformActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".HistoricActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".AboutActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".AddPerformActivity" android:screenOrientation="landscape"></activity>
+
     </application>
 
 
