@@ -3,8 +3,10 @@ package fr.ldnr.androtennis;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import misc.MenuNavigation;
 
@@ -19,9 +21,20 @@ public class PerformActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.perform);
 
-        manageBdd datab=new manageBdd(this);
-
-
+        Log.i("Info SQL","Manage de la table");
+        manageBdd databa=new manageBdd(this);
+        if(databa==null)
+        {
+            Log.i("InfoSQL","Objet databa VIDE!");
+        }
+        else
+        {
+            Log.i("InfoSQL","Ok objet databa instancié");
+        }
+        Log.i("Info SQL","On va insérer des données");
+        int nb=databa.insertPerform("Rambo",3,6,6,1,6,2,1,"Toulouse","2017-04-20 15:41:22");
+        Log.i("Info SQLite","Données insérées");
+        Toast.makeText(this,"On a inséré les données",Toast.LENGTH_LONG).show();
     }
 
     @Override
