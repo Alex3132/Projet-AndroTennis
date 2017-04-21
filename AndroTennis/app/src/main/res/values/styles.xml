@@ -36,4 +36,10 @@
        <!-- <item name="android:background">@drawable/simple_text</item>-->
     </style>
 
+    <style name="home_perform_text_style">
+
+        <item name="android:textColor">#000</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
 </resources>
