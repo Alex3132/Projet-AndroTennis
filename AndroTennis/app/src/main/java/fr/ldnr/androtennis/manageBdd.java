@@ -27,7 +27,7 @@ public class manageBdd extends SQLiteOpenHelper
         try
         {
             Log.i("Info SQL","La table va être crée");
-            db.execSQL("CREATE TABLE donnees(id INTEGER PRIMARY KEY, noma TEXT)");
+            db.execSQL("CREATE TABLE donnees(id INTEGER PRIMARY KEY, noma TEXT, set1j INTEGER, set1a INTEGER, set2j INTEGER, set2a INTEGER, set3j INTEGER, set3a INTEGER, result INTEGER, lieu TEXT, dateTime DATETIME)");
             Log.i("Info SQL","Table crée");
         }
         catch (SQLiteException ex)
@@ -52,6 +52,7 @@ public class manageBdd extends SQLiteOpenHelper
         SQLiteDatabase db=getWritableDatabase();
         try
         {
+            //db.execSQL("INSERT INTO donnees(noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime) VALUES (?,?,?,?,?,?,?,?,?,?)", new Object[] { noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime }); // Requete paramétrée
             db.execSQL("INSERT INTO donnees(noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime) VALUES (?,?,?,?,?,?,?,?,?,?)", new Object[] { noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime }); // Requete paramétrée
 
         }
