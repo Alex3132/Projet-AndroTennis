@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_main">AndroTennis &#169;2017</string>
+    <string name="about_authors">Auteurs : Alexis Zueras, Tristan Fongaro, Jean Mariette.</string>
+    <string name="about_else">Réalisé Pour la LDNR. Sous la tutelle de Michael Blanchard</string>
+</resources>

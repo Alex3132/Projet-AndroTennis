@@ -5,4 +5,5 @@
 
     <string name="home_add_perform">Ajouter Performance</string>
     <string name="home_see_perform">Voir les Performances</string>
+    <string name="home_last_perform">Les dernières données :</string>
 </resources>
