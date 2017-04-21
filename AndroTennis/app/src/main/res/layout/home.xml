@@ -91,7 +91,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@d" />
+                    android:src="@drawable/tenniswoman1" />
             </ViewFlipper>
 
             <TextView
@@ -151,51 +151,59 @@
                 >
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:text="@string/home_last_perform"
                     style="@style/other_text_style"
                     android:textAlignment="center"/>
 
                 <ViewFlipper
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     android:autoStart="true"
                     android:flipInterval="1000"
+
                     >
                 <TextView
                     android:id="@+id/last_add_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Enregistrement1"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    style="@style/intro_text_style"/>
 
                 <TextView
                     android:id="@+id/last_add_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Enregistrement 2"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    style="@style/intro_text_style"/>
 
                 <TextView
                     android:id="@+id/last_add_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Enregistrement 3"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    style="@style/intro_text_style"/>
 
                 <TextView
                     android:id="@+id/last_add_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Enregistrement 4"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    style="@style/intro_text_style"/>
 
                 <TextView
                     android:id="@+id/last_add_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Enregistrement 5"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    style="@style/intro_text_style"/>
                 </ViewFlipper>
 
                 <Button
