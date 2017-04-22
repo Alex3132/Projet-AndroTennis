@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/terraintennis2"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    >
 
     <LinearLayout
         android:id="@+id/home_buttons"
@@ -15,7 +15,6 @@
         tools:targetApi="GINGERBREAD">
 
         <Button
-            style="@style/button_style"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -23,7 +22,6 @@
             android:text="@string/menu_home" />
 
         <Button
-            style="@style/button_style"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -31,7 +29,6 @@
             android:text="@string/menu_perform" />
 
         <Button
-            style="@style/button_style"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -39,7 +36,6 @@
             android:text="@string/menu_hist" />
 
         <Button
-            style="@style/button_style"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -82,21 +78,17 @@
                 >
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/tennisman1" />
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:src="@drawable/tennisman1" />
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/tenniswoman1" />
-            </ViewFlipper>
+
+             </ViewFlipper>
 
             <TextView
                 android:id="@+id/home_text"
-                style="@style/intro_text_style"
+
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -118,12 +110,13 @@
 
             <Button
                 android:id="@+id/button_about"
-                style="@style/button_style"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:onClick="onAboutButtonClicked"
-                android:text="@string/home_about" />
+                android:text="@string/home_about"
+                />
         </LinearLayout>
     </LinearLayout>
 
@@ -154,15 +147,16 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    style="@style/intro_text_style">
+          >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
                     android:text="@string/home_last_perform"
-                    android:textStyle="italic"
-                    android:textColor="#000"
+
+
                     android:textAlignment="center"/>
+
 
                 <ViewFlipper
                     android:layout_width="match_parent"
@@ -177,7 +171,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    style="@style/home_perform_text_style"
+
                     android:textAlignment="center"
                     />
 
@@ -185,7 +179,7 @@
                     android:id="@+id/last_add_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/home_perform_text_style"
+
                     android:textAlignment="center"
                     />
 
@@ -193,7 +187,7 @@
                     android:id="@+id/last_add_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/home_perform_text_style"
+
                     android:textAlignment="center"
                     />
 
@@ -201,7 +195,7 @@
                     android:id="@+id/last_add_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/home_perform_text_style"
+
                     android:textAlignment="center"
                     />
 
@@ -209,7 +203,7 @@
                     android:id="@+id/last_add_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/home_perform_text_style"
+
                     android:textAlignment="center"
                     />
                 </ViewFlipper>
@@ -217,7 +211,7 @@
 
                 <Button
                     android:id="@+id/home_add_perform"
-                    style="@style/button_style"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="OnAddPerformButtonClicked"
@@ -225,7 +219,7 @@
 
                 <Button
                     android:id="@+id/home_see_perform"
-                    style="@style/button_style"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onSeePerformButtonClicked"

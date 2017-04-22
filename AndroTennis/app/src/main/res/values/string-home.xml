@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="home_text">Voici le texte explicatif.</string>
-    <string name="home_about">A propos</string>
-
-    <string name="home_add_perform">Ajouter Performance</string>
-    <string name="home_see_perform">Voir les Performances</string>
-    <string name="home_last_perform">Les dernières données :</string>
-</resources>

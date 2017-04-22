@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -33,14 +34,18 @@ public class HomeActivity extends Activity {
 
         setContentView(R.layout.home);
 
+
+
         //for api 11 minimum
         View home = findViewById(R.id.home_buttons);
         if (Build.VERSION.SDK_INT >= 11) {
 
             home.setVisibility(GONE);
 
-            setLastAddViews();
+
         }
+
+        setLastAddViews();
     }
 
     @Override
@@ -150,6 +155,7 @@ public class HomeActivity extends Activity {
                 tabBack.add("Adversaire : " +c.getString(c.getColumnIndex("noma")) +"   Date : "+ c.getString(c.getColumnIndex("dateTime")).substring(0,10));
 
             }
+            c.close();
 
             switch (nb) {
 
@@ -157,7 +163,7 @@ public class HomeActivity extends Activity {
                     break;
                 case 1:
                     lastAdd1.setText(tabBack.get(0));
-                    lastAdd2.setText(tabBack.get(1));
+
                     break;
                 case 2:
 
@@ -196,6 +202,7 @@ public class HomeActivity extends Activity {
                     lastAdd5.setText(tabBack.get(4));
             }
         }
+        db.close();
     }
 }
 

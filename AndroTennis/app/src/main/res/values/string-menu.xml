@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="menu_home">Accueil</string>
-    <string name="menu_perform">Performances</string>
-    <string name="menu_hist">Historique</string>
-    <string name="menu_export">Exporter données</string>
-</resources>

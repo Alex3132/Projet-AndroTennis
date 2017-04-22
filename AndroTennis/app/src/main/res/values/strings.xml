@@ -29,4 +29,11 @@
     <string name="about_main">AndroTennis &#169;2017</string>
     <string name="about_authors">Auteurs : Alexis Zueras, Tristan Fongaro, Jean Mariette.</string>
     <string name="about_else">Réalisé Pour la LDNR. Sous la tutelle de Michael Blanchard</string>
+
+
+
+    <string name="splash_text">AndroTennis vous aide à vous améliorer</string>
+    <string name="splash_text_2">N\'oubliez pas d\'enregistrer vos performances!</string>
+    <string name="splash_text_3">Le graphique donne un aperçu des derniers résultats</string>
+    <string name="splash_text_4">Soyez patient et rigoureux, vous y arriverez</string>
 </resources>
