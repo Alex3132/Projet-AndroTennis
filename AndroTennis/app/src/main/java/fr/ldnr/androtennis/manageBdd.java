@@ -65,12 +65,50 @@ public class manageBdd extends SQLiteOpenHelper
         {
             int nb=c.getInt(0);
             c.close();
+            db.close();
             return nb;
         }
         else
         {
             c.close();
+            db.close();
             return 0;
+        }
+    }
+
+    public boolean majPerform(int nid, String noma, int set1j, int set1a, int set2j, int set2a, int set3j, int set3a, String result, String lieu, String dateTime)
+    {
+        SQLiteDatabase db=getWritableDatabase();
+        try
+        {
+            //db.execSQL("INSERT INTO donnees(noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime) VALUES (?,?,?,?,?,?,?,?,?,?)", new Object[] { noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime }); // Requete paramétrée
+            db.execSQL("UPDATE donnees SET (noma=?, set1j=?, set1a=?, set2j=?, set2a=?, set3j=?, set3+?, result+?, lieu=?, dateTime=?) WHERE id=? LIMIT 1", new Object[] { noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime, nid }); // Requete paramétrée
+
+            return true;
+        }
+        catch (SQLiteException ex)
+        {
+            Log.i("InfoSQL","Erreur sqLite"+ex);
+            return false;
+        }
+
+    }
+
+    public boolean deletePerform(int nid)
+    {
+
+        SQLiteDatabase db=getWritableDatabase();
+        try
+        {
+            db.execSQL("DELETE FROM donnees WHERE id=? LIMIT 1",new Object[] { nid });
+            return true;
+
+        }
+        catch (SQLiteException ex)
+        {
+            Log.i("InfoSQL","Erreur sqLite"+ex);
+            return false;
+
         }
     }
 
