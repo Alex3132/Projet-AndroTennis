@@ -111,7 +111,7 @@ public class AddPerformActivity extends Activity {
                 if(!date.equals("")){
                 manager.insertPerform(noma, set1j, set1a, set2j, set2a, set3j, set3a, victory, location, date);
                     Log.i("InfoinsertPerform", "Données insérées");
-                    Toast.makeText(this,"Performance ajoutée", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,getResources().getString(R.string.added_perform), Toast.LENGTH_LONG).show();
                    SQLiteDatabase dbm= manager.getReadableDatabase();
 
                     Cursor c=dbm.rawQuery("SELECT * FROM donnees",null);
@@ -124,7 +124,7 @@ public class AddPerformActivity extends Activity {
                     }
             }else{
 
-                    Toast.makeText(this, "Veuillez entrer la date au bon format", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getResources().getString(R.string.need_good_date), Toast.LENGTH_LONG).show();
                 }
             }catch (SQLiteException E){
 
@@ -132,7 +132,7 @@ public class AddPerformActivity extends Activity {
             }
         }else {
 
-            Toast.makeText(this, "Vous devez entrer un nom / entraînement.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getResources().getString(R.string.need_name), Toast.LENGTH_LONG).show();
         }
 
     }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -27,6 +28,10 @@ import static android.view.View.GONE;
 
 public class HomeActivity extends Activity {
 
+    //perform ids
+
+    ArrayList<String> ids = new ArrayList<String>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +53,15 @@ public class HomeActivity extends Activity {
         setLastAddViews();
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
+
 
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
@@ -127,6 +135,8 @@ public class HomeActivity extends Activity {
         lastAdd5.setVisibility(GONE);
 
 
+        try{
+
         manageBdd manager = new manageBdd(this);
 
         SQLiteDatabase db = manager.getReadableDatabase();
@@ -143,16 +153,16 @@ public class HomeActivity extends Activity {
             nb = 0;
         }
 
-        Cursor c = db.rawQuery("SELECT noma, dateTime from donnees ORDER BY dateTime DESC LIMIT 5", null);
+        Cursor c = db.rawQuery("SELECT id, noma, dateTime from donnees ORDER BY dateTime DESC LIMIT 5", null);
 
         if (c.moveToFirst()) {
 
-
-            tabBack.add("Adversaire : " +c.getString(c.getColumnIndex("noma")) +"   Date : "+ c.getString(c.getColumnIndex("dateTime")).substring(0,10));
+            ids.add(c.getString(c.getColumnIndex("id")));
+            tabBack.add(getResources().getString(R.string.home_adversary) +c.getString(c.getColumnIndex("noma")) +getResources().getString(R.string.home_date)+ c.getString(c.getColumnIndex("dateTime")).substring(0,10));
 
             while (c.moveToNext()) {
-
-                tabBack.add("Adversaire : " +c.getString(c.getColumnIndex("noma")) +"   Date : "+ c.getString(c.getColumnIndex("dateTime")).substring(0,10));
+                ids.add(c.getString(c.getColumnIndex("id")));
+                tabBack.add(getResources().getString(R.string.home_adversary) +c.getString(c.getColumnIndex("noma")) +getResources().getString(R.string.home_date)+ c.getString(c.getColumnIndex("dateTime")).substring(0,10));
 
             }
             c.close();
@@ -202,7 +212,67 @@ public class HomeActivity extends Activity {
                     lastAdd5.setText(tabBack.get(4));
             }
         }
-        db.close();
+        db.close();}catch (SQLiteException E){
+
+            Log.i("Erreur SQL", "Erreur : "+E.getMessage());
+        }
+    }
+
+    public void OnPerformClicked(View view){
+
+        Intent intent = new Intent(HomeActivity.this, PerformShowActivity.class);
+
+        switch(view.getId()){
+
+            case R.id.last_add_1:
+
+                if(!ids.get(0).isEmpty()) {
+                    intent.putExtra("id", ids.get(0));
+                    startActivityForResult(intent, 0);
+                }
+                break;
+            case R.id.last_add_2:
+                if(!ids.get(1).isEmpty()) {
+                    intent.putExtra("id", ids.get(1));
+                    startActivityForResult(intent, 0);
+                }
+                break;
+            case R.id.last_add_3:
+                if(!ids.get(2).isEmpty()) {
+                    intent.putExtra("id", ids.get(2));
+                    startActivityForResult(intent, 0);
+                }
+                break;
+            case R.id.last_add_4:
+                if(!ids.get(3).isEmpty()) {
+                    intent.putExtra("id", ids.get(3));
+                    startActivityForResult(intent, 0);
+                }
+                break;
+            case R.id.last_add_5:
+                if(!ids.get(4).isEmpty()) {
+                    intent.putExtra("id", ids.get(4));
+                    startActivityForResult(intent, 0);
+                }
+                break;
+
+        }
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setLastAddViews();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setLastAddViews();
     }
 }
+
+
 

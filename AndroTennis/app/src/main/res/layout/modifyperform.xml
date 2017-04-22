@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/modify_perform_edit_noma"
+            android:text="@string/add_perform_add_text_noma"/>
+
+        <EditText
+            android:id="@+id/modify_perform_edit_noma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/modify_perform_edit_set1j"
+            android:text="@string/add_perform_add_text_set1j"/>
+
+        <EditText
+            android:id="@+id/modify_perform_edit_set1j"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/modify_perform_edit_set1a"
+            android:text="@string/add_perform_add_text_set1a"/>
+
+        <EditText
+            android:id="@+id/modify_perform_edit_set1a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/modify_perform_edit_set2j"
+            android:text="@string/add_perform_add_text_set2j"/>
+        <EditText
+            android:id="@+id/modify_perform_edit_set2j"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/modify_perform_edit_set2a"
+            android:text="@string/add_perform_add_text_set2a"/>
+        <EditText
+            android:id="@+id/modify_perform_edit_set2a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/modify_perform_edit_set3j"
+            android:text="@string/add_perform_add_text_set3j"/>
+        <EditText
+            android:id="@+id/modify_perform_edit_set3j"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/modify_perform_edit_set3a"
+            android:text="@string/add_perform_add_text_set3a"/>
+        <EditText
+            android:id="@+id/modify_perform_edit_set3a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+
+            />
+
+        <CheckBox
+            android:id="@+id/modify_perform_edit_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_perform_add_text_result"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/modify_perform_edit_date"
+            android:text="@string/add_perform_add_text_date"/>
+
+        <EditText
+            android:id="@+id/modify_perform_edit_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/add_perform_date_type"
+
+            android:inputType="datetime" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/modify_perform_edit_location"
+            android:text="@string/add_perform_add_text_location"/>
+
+        <EditText
+            android:id="@+id/modify_perform_edit_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:inputType="text" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/add_perform_edit_valid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modify_perform_button"
+            android:onClick="onModifyButtonConfirmClicked"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCancelButtonClicked"
+            android:text="@string/cancel_button"/>
+</LinearLayout>
+    </LinearLayout>
+</ScrollView>

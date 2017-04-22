@@ -82,7 +82,7 @@ public class manageBdd extends SQLiteOpenHelper
         try
         {
             //db.execSQL("INSERT INTO donnees(noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime) VALUES (?,?,?,?,?,?,?,?,?,?)", new Object[] { noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime }); // Requete paramétrée
-            db.execSQL("UPDATE donnees SET (noma=?, set1j=?, set1a=?, set2j=?, set2a=?, set3j=?, set3+?, result+?, lieu=?, dateTime=?) WHERE id=? LIMIT 1", new Object[] { noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime, nid }); // Requete paramétrée
+            db.execSQL("UPDATE donnees SET noma=?, set1j=?, set1a=?, set2j=?, set2a=?, set3j=?, set3a=?, result=?, lieu=?, dateTime=? WHERE id=? ", new Object[] { noma, set1j, set1a, set2j, set2a, set3j, set3a, result, lieu, dateTime, nid }); // Requete paramétrée
 
             return true;
         }
@@ -100,7 +100,7 @@ public class manageBdd extends SQLiteOpenHelper
         SQLiteDatabase db=getWritableDatabase();
         try
         {
-            db.execSQL("DELETE FROM donnees WHERE id=? LIMIT 1",new Object[] { nid });
+            db.execSQL("DELETE FROM donnees WHERE id=? ",new Object[] { nid });
             return true;
 
         }
