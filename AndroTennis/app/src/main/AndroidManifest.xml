@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
     package="fr.ldnr.androtennis">
-
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission-sdk-23>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +12,9 @@
 
 
 
+
         >
+
 
         <activity android:name=".SplashscreenAndroTennis">
             <intent-filter>
@@ -24,14 +27,15 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".HomeActivity" android:screenOrientation="landscape">
+        <activity android:name=".HomeActivity"  android:screenOrientation="landscape">
 
         </activity>
+        <activity android:name=".PerformShowActivity" android:screenOrientation="landscape"></activity>
         <activity android:name=".PerformActivity" android:screenOrientation="landscape"></activity>
         <activity android:name=".HistoricActivity" android:screenOrientation="landscape"></activity>
         <activity android:name=".AboutActivity" android:screenOrientation="landscape"></activity>
         <activity android:name=".AddPerformActivity" android:screenOrientation="landscape"></activity>
-
+<activity android:name=".ModifyPerformActivity" android:screenOrientation="landscape"></activity>
     </application>
 
 
