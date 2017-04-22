@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">AndroTennis</string>
+    <string name="perform_add_perform">Add performance</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_perform">Performances</string>
+    <string name="menu_hist">Historical</string>
+    <string name="menu_export">Export data</string>
+    <string name="home_text">AndroTennis : Enables you to see at a glance your latest performance.</string>
+    <string name="home_about">About</string>
+
+    <string name="home_add_perform">Add Performance</string>
+    <string name="home_see_perform">See Performances</string>
+    <string name="home_last_perform">Lastest data :</string>
+
+    <string name="add_perform_add_text_noma">Opponent name or training</string>
+
+    <string name="add_perform_add_text_location">Place of Performance</string>
+    <string name="add_perform_add_text_date">Date of performance</string>
+    <string name="add_perform_add_text_result">Victoiry</string>
+    <string name="add_perform_add_text_set1j">Score Set 1</string>
+    <string name="add_perform_add_text_set2j">Score Set 2</string>
+    <string name="add_perform_add_text_set3j">Score Set 3</string>
+    <string name="add_perform_add_text_set1a">Score Set 1 opponent\'s</string>
+    <string name="add_perform_add_text_set2a">Score Set 2 opponent\'s</string>
+    <string name="add_perform_add_text_set3a">Score Set 3 opponent\'s</string>
+    <string name="add_perform_button_text">Add</string>
+    <string name="add_perform_date_type">DD-MM-YYYY</string>
+
+    <string name="about_main">AndroTennis &#169;2017</string>
+    <string name="about_authors">Authors : Alexis Zueras, Tristan Fongaro, Jean Mariette.</string>
+    <string name="about_else">Completed For the LDNR. Under the tutelage of Michael Blanchard</string>
+
+
+
+    <string name="splash_text">AndroTennis helps you to improve</string>
+    <string name="splash_text_2">Don\'t forget to record your performances!</string>
+    <string name="splash_text_3">The graph gives an overview of the latest results</string>
+    <string name="splash_text_4">Be patient and rigorous, you will get there</string>
+</resources>
