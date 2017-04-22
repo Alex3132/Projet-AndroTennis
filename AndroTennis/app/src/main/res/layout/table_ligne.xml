@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/cDate"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="Date"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/cNom"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="Nom"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/cSet1"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="Set1"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/cSet1A"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="Set1 Adv."
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/cSet2"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="Set2"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/cSet2A"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="Set2 Adv."
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/cSet3"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="Set3"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/cSet3A"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="Set3 Adv."
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/cLieu"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="Lieu"
+        android:textAlignment="center"
+        />
+
+
+
+</TableRow>
