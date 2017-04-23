@@ -33,7 +33,7 @@ public class PerformShowActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+//to get all the fields off the record in db
         ArrayList<String> array = new ArrayList<String>();
 
         Intent intent = getIntent();
@@ -74,7 +74,6 @@ public class PerformShowActivity extends Activity {
             db.close();
         } else {
 
-            Log.i("Données", "Données non trouvées");
             c.close();
             db.close();
         }
@@ -107,9 +106,7 @@ public class PerformShowActivity extends Activity {
                 MenuNavigation.goToActivity(PerformShowActivity.this, PerformActivity.class);
                 return true;
 
-            case R.id.home_menu_export:
-                /*TODO : Add export code */
-                return true;
+
 
             case R.id.home_menu_welcome:
                 MenuNavigation.goToActivity(PerformShowActivity.this, HomeActivity.class);
@@ -118,7 +115,7 @@ public class PerformShowActivity extends Activity {
         }
     }
 
-
+//when modify button is clicked
     public void onModifyButtonClicked(View view){
 
 Intent intent = new Intent(PerformShowActivity.this, ModifyPerformActivity.class);
@@ -133,12 +130,15 @@ Intent intent = new Intent(PerformShowActivity.this, ModifyPerformActivity.class
 
 
     }
+
+    //when delete button is clicked a popup is showing
     public void onDeletePerformButtonClicked(View view){
 
         AlertDialog.Builder builder1 = new AlertDialog.Builder(PerformShowActivity.this, R.style.myDialog);
         builder1.setMessage(R.string.delete_alert_message);
         builder1.setCancelable(true);
 
+        //yes button
         builder1.setPositiveButton(
                 R.string.delete_yes,
                 new DialogInterface.OnClickListener() {
@@ -156,17 +156,19 @@ Intent intent = new Intent(PerformShowActivity.this, ModifyPerformActivity.class
                         }catch(SQLiteException E){
 
 
-                            Log.i("Erreur SQL", "Erreur : "+E.getMessage());
+                            Log.e("Erreur SQL", "Erreur : "+E.getMessage());
                         }
                         dialog.cancel();
+                        finish();
                     }
                 });
-
+//no button
         builder1.setNegativeButton(
                 R.string.delete_no,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
+
                     }
                 });
 

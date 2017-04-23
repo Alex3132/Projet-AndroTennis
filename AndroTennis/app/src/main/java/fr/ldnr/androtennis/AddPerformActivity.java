@@ -77,9 +77,7 @@ public class AddPerformActivity extends Activity {
                 MenuNavigation.goToActivity(AddPerformActivity.this, PerformActivity.class);
                 return true;
 
-            case R.id.home_menu_export:
-                /*TODO : Add export code */
-                return true;
+
 
             case R.id.home_menu_welcome:
                 MenuNavigation.goToActivity(AddPerformActivity.this, HomeActivity.class);
@@ -120,25 +118,20 @@ public class AddPerformActivity extends Activity {
                 SQLiteDatabase db= manager.getWritableDatabase();
                 if(!date.equals("")){
                 manager.insertPerform(noma, set1j, set1a, set2j, set2a, set3j, set3a, victory, location, date);
-                    Log.i("InfoinsertPerform", "Données insérées");
+
                     Toast.makeText(AddPerformActivity.this,getResources().getString(R.string.added_perform), Toast.LENGTH_LONG).show();
                    SQLiteDatabase dbm= manager.getReadableDatabase();
 
-                    Cursor c=dbm.rawQuery("SELECT * FROM donnees",null);
-                    if(c.moveToFirst()) {
-                        while (c.moveToNext()) {
-                            Log.i("Info", c.getString(c.getColumnIndex("dateTime")));
-                        }
-                        c.close();
 
-                    }
+
+
             }else{
 
                     Toast.makeText(AddPerformActivity.this, getResources().getString(R.string.need_good_date), Toast.LENGTH_LONG).show();
                 }
             }catch (SQLiteException E){
 
-                Log.i("Error InsertPerform", "Error : "+E);
+                Log.e("Error InsertPerform", "Error : "+E);
             }
         }else {
 
@@ -238,14 +231,13 @@ public class AddPerformActivity extends Activity {
         String dateDump = date.getText().toString();
         if(!dateDump.isEmpty()&& dateDump.matches("^\\d{2}[ :\\.\\-\\/]{1}\\d{2}[ :\\.\\-\\/]{1}\\d{4}$")){
 
-            Log.i("Chainecarac", dateDump);
+
 
            String day= dateDump.substring(0,2);
 
-            Log.i("jour", day);
 
             String month = dateDump.substring(3,5);
-            Log.i("moi", month);
+
 
             String year = dateDump.substring(6,10);
 

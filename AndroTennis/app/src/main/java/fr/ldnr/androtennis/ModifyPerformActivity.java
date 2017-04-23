@@ -76,13 +76,13 @@ public class ModifyPerformActivity extends Activity {
 
                 viewlocation.setText(c.getString(c.getColumnIndex("lieu")));
                 viewdate.setText(getFrenchDate(c.getString(c.getColumnIndex("dateTime"))));
-Log.i("date : " ,c.getString(c.getColumnIndex("dateTime")));
+
 db.close();c.close();
             }
 
         } catch (SQLiteException E) {
 
-            Log.i("Erreur SQL", "Erreur : " + E.getMessage());
+            Log.e("Erreur SQL", "Erreur : " + E.getMessage());
 
         }
     }
@@ -107,9 +107,7 @@ db.close();c.close();
                 MenuNavigation.goToActivity(ModifyPerformActivity.this, PerformActivity.class);
                 return true;
 
-            case R.id.home_menu_export:
 
-                return true;
 
             case R.id.home_menu_welcome:
                 MenuNavigation.goToActivity(ModifyPerformActivity.this, HomeActivity.class);
@@ -160,13 +158,13 @@ db.close();c.close();
                                         Toast.makeText(ModifyPerformActivity.this, getResources().getString(R.string.modify_done), Toast.LENGTH_LONG).show();
                                     } catch (SQLiteException E) {
 
-                                        Log.i("Erreur SQL", "Erreur : " + E.getMessage());
+                                        Log.e("Erreur SQL", "Erreur : " + E.getMessage());
 
                                     }
 
                                 } catch (SQLiteException E) {
 
-                                    Log.i("Erreur SQL", "Erreur : " + E.getMessage());
+                                    Log.e("Erreur SQL", "Erreur : " + E.getMessage());
 
                                 }
 
@@ -228,14 +226,11 @@ db.close();c.close();
 
             if(!date.isEmpty()&& date.matches("^\\d{2}[ :\\.\\-\\/]{1}\\d{2}[ :\\.\\-\\/]{1}\\d{4}$")){
 
-                Log.i("Chainecarac", date);
 
                 String day= date.substring(0,2);
 
-                Log.i("jour", day);
 
                 String month = date.substring(3,5);
-                Log.i("moi", month);
 
                 String year = date.substring(6,10);
 
@@ -253,7 +248,7 @@ db.close();c.close();
     public String getFrenchDate(String date){
 
         String dateDump= date.substring(0,10);
-Log.i(" date N", dateDump);
+
         String year= dateDump.substring(0,4);
 
         String month = dateDump.substring(5,7);

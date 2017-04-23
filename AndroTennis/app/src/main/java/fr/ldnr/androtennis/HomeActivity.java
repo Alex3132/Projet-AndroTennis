@@ -25,7 +25,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import misc.MenuNavigation;
 
@@ -41,6 +43,7 @@ public class HomeActivity extends Activity {
     //perform ids
 
     private ArrayList<String> ids = new ArrayList<String>();
+    //bdd name to save
     public String bddFileName = "bddAndrotennis.xml";
 
     @Override
@@ -49,11 +52,12 @@ public class HomeActivity extends Activity {
 
 
         setContentView(R.layout.home);
+        //for sdk>23
         if (shouldAskPermissions()) {
             askPermissions();
         }
 
-        //for api 11 minimum
+        //for api 11 minimum withdraw the buttons
         View home = findViewById(R.id.home_buttons);
         if (Build.VERSION.SDK_INT >= 11) {
 
@@ -87,11 +91,7 @@ public class HomeActivity extends Activity {
                 MenuNavigation.goToActivity(HomeActivity.this, PerformActivity.class);
                 return true;
 
-            case R.id.home_menu_export:
 
-                onExportButtonClicked(findViewById(R.id.home_menu_export));
-                /*TODO : Add export code */
-                return true;
 
             case R.id.home_menu_welcome:
                 MenuNavigation.goToActivity(HomeActivity.this, HomeActivity.class);
@@ -100,6 +100,7 @@ public class HomeActivity extends Activity {
         }
 
     }
+    //for the buttons < api11
 
     public void OnAddPerformButtonClicked(View view) {
 
@@ -126,6 +127,8 @@ public class HomeActivity extends Activity {
 
     }
 
+    //export button code
+
     public void onExportButtonClicked(View view) {
 
         String xmlToWrite = getDatabaseXml();
@@ -134,42 +137,43 @@ public class HomeActivity extends Activity {
 
 
             try {
-if(Build.VERSION.SDK_INT<19){
-                File dir = new File(Environment.getExternalStorageDirectory()+"/Documents");
-                Boolean isPresent = true;
 
-                if(!dir.exists()) {
-                    isPresent = dir.mkdirs();
-                }
+                if (Build.VERSION.SDK_INT < 19) {
+//to get a new file, put the time before bdd name
+                    Long tsLong = System.currentTimeMillis() / 1000;
+                    String ts = tsLong.toString();
+                    File dir = new File(Environment.getExternalStorageDirectory() + "/Documents");
+                    Boolean isPresent = true;
 
-                if(isPresent) {
-                    File f = new File(dir.getAbsolutePath(), bddFileName);
-                    FileOutputStream fw = new FileOutputStream(f, true);
+                    if (!dir.exists()) {
+                        isPresent = dir.mkdirs();
+                    }
 
-                    fw.write(xmlToWrite.getBytes());
-                    fw.close();
-                    Log.i("Données Exportées", "Exporté : "+Environment.getExternalStorageDirectory()+"/Documents");
-                }}else{
+                    if (isPresent) {
+                        File f = new File(dir.getAbsolutePath(), ts + bddFileName);
+                        FileOutputStream fw = new FileOutputStream(f, true);
 
+                        fw.write(xmlToWrite.getBytes());
+                        fw.close();
+                    }
+                } else {
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
+                    String currentDateandTime = sdf.format(new Date());
                     File dir2 = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
                     dir2.mkdirs();
 
-                    File f = new File(dir2, bddFileName);
+                    File f = new File(dir2, currentDateandTime + bddFileName);
                     FileOutputStream fw = new FileOutputStream(f, true);
 
                     fw.write(getDatabaseXml().getBytes());
                     fw.close();
-                    Log.i("Données Exportées", "Exporté api 19 : "+Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
 
                 }
-                } catch (FileNotFoundException e) {
+            } catch (FileNotFoundException e) {
                 e.printStackTrace();
-            }
-
-         catch (IOException ioexc) {
+            } catch (IOException ioexc) {
 
                 Toast.makeText(this, "Physical Storage Error", Toast.LENGTH_LONG).show();
-                Log.e("HomeActivity", "SDCard Error", ioexc);
             }
 
         } else {
@@ -178,7 +182,7 @@ if(Build.VERSION.SDK_INT<19){
         }
     }
 
-
+// to get the sqlite database as a xml string
     public String getDatabaseXml() {
 
 
@@ -241,7 +245,7 @@ if(Build.VERSION.SDK_INT<19){
 
         } catch (SQLiteException E) {
 
-            Log.i("Erreur SQL", "Erreur : " + E.getMessage());
+            Log.e("Erreur SQL", "Erreur : " + E.getMessage());
             return "";
         } catch (IOException e) {
             e.printStackTrace();
@@ -253,6 +257,7 @@ if(Build.VERSION.SDK_INT<19){
 
     }
 
+    //for the textviews at home screen with the 5 last performs
     public void setLastAddViews() {
 
         int nb = 0;
@@ -280,7 +285,6 @@ if(Build.VERSION.SDK_INT<19){
 
             if (curs.moveToFirst()) {
                 nb = curs.getInt(0);
-                Log.i("NOmbre : ", Integer.toString(nb));
                 curs.close();
 
             } else {
@@ -350,9 +354,11 @@ if(Build.VERSION.SDK_INT<19){
             db.close();
         } catch (SQLiteException E) {
 
-            Log.i("Erreur SQL", "Erreur : " + E.getMessage());
+            Log.e("Erreur SQL", "Erreur : " + E.getMessage());
         }
     }
+
+    //callback on last perform clicked
 
     public void OnPerformClicked(View view) {
 
@@ -422,6 +428,8 @@ if(Build.VERSION.SDK_INT<19){
         int requestCode = 200;
         requestPermissions(permissions, requestCode);
     }
+
+
 }
 
 

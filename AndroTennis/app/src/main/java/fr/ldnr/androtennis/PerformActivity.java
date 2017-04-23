@@ -85,9 +85,7 @@ public class PerformActivity extends Activity {
                 MenuNavigation.goToActivity(PerformActivity.this, PerformActivity.class);
                 return true;
 
-            case R.id.home_menu_export:
-                /*TODO : Add export code */
-                return true;
+
 
             case R.id.home_menu_welcome:
                 MenuNavigation.goToActivity(PerformActivity.this, HomeActivity.class);
@@ -127,9 +125,7 @@ public class PerformActivity extends Activity {
                 int middley=getHeight()/2;
                 float flarg=larg/10-10;
                 int sizex=(larg-((int)(flarg)*10+90))/2;
-                Log.i("sizeX","="+sizex);
-                Log.i("Info largeur=","="+larg);
-                Log.i("Info flarg","flarg="+flarg);
+
                 if(valeur[l]==1)
                 {
                     paint.setARGB(255,0,255,0);
@@ -138,7 +134,7 @@ public class PerformActivity extends Activity {
                     cxLabel=(int) (flarg*l);
                     cxLabel+=10;
                     canvas.drawText(lDate[l],sizex+cxLabel, cyLabel, paint);
-                    Log.i("cxLabel","="+cxLabel);
+
                 }
                 else if(valeur[l]==-1)
                 {
@@ -148,11 +144,11 @@ public class PerformActivity extends Activity {
                     cxLabel=(int) (flarg*l);
                     cxLabel+=10;
                     canvas.drawText(lDate[l],sizex+cxLabel, cyLabel, paint);
-                    Log.i("cxLabel","="+cxLabel);
+
                 }
             }
             //canvas.drawRect(50.0f,50.0f,100.0f,100.0f,paint);
-            Log.i("Info taille","="+getWidth()+"-"+getHeight());
+
 
         }
     }

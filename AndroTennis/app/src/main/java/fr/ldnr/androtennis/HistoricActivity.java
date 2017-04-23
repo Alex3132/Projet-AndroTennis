@@ -76,11 +76,10 @@ public class HistoricActivity extends Activity {
         ((TextView) lignedepart.findViewById(R.id.cLieu)).setText(c.getString(c.getColumnIndex("lieu")));
         table.addView(lignedepart);
         idligne.add(Integer.parseInt(c.getString(c.getColumnIndex("id"))));
-        
+
             while (c.moveToNext())
             {
                 TableRow ligne=(TableRow) inflater.inflate(R.layout.table_ligne,null);
-                Log.i("info","="+c.getString(c.getColumnIndex("result")));
                 if(c.getString(c.getColumnIndex("result")).equals("1"))
                 {
                     ligne.setBackgroundColor(0xFF007700);
@@ -134,9 +133,7 @@ public class HistoricActivity extends Activity {
                 MenuNavigation.goToActivity(HistoricActivity.this, PerformActivity.class);
                 return true;
 
-            case R.id.home_menu_export:
-                /*TODO : Add export code */
-                return true;
+
 
             case R.id.home_menu_welcome:
                 MenuNavigation.goToActivity(HistoricActivity.this, HomeActivity.class);
@@ -147,11 +144,9 @@ public class HistoricActivity extends Activity {
 
     public void onHistoricClick(View view)
     {
-        Log.i("Info=","On est dans la listener");
         //Intent intent=new Intent(HistoricActivity.this,PerformShowActivity.class);
         TableLayout tl=(TableLayout) findViewById(R.id.tablehisto);
         TableRow trow=(TableRow) view.getParent();
-        Log.i("InfoLigne","=nl="+tl.indexOfChild(trow));
         int cindex=tl.indexOfChild(trow);
         cindex-=1;
 

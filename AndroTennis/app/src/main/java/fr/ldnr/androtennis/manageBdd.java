@@ -23,16 +23,13 @@ public class manageBdd extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        Log.i("InfoSQL","Methode onCreate");
         try
         {
-            Log.i("Info SQL","La table va être crée");
             db.execSQL("CREATE TABLE donnees(id INTEGER PRIMARY KEY, noma TEXT, set1j INTEGER, set1a INTEGER, set2j INTEGER, set2a INTEGER, set3j INTEGER, set3a INTEGER, result INTEGER, lieu TEXT, dateTime DATETIME)");
-            Log.i("Info SQL","Table crée");
         }
         catch (SQLiteException ex)
         {
-            Log.i("InfoSQL","Erreur sqLite -> "+ex);
+            Log.e("InfoSQL","Erreur sqLite -> "+ex);
         }
         finally
         {
@@ -58,7 +55,7 @@ public class manageBdd extends SQLiteOpenHelper
         }
         catch (SQLiteException ex)
         {
-            Log.i("InfoSQL","Erreur sqLite"+ex);
+            Log.e("InfoSQL","Erreur sqLite"+ex);
         }
         Cursor c=db.rawQuery("SELECT COUNT(*) id,noma FROM donnees",null);
         if(c.moveToFirst())        // moveToNext pour une boucle
@@ -88,7 +85,7 @@ public class manageBdd extends SQLiteOpenHelper
         }
         catch (SQLiteException ex)
         {
-            Log.i("InfoSQL","Erreur sqLite"+ex);
+            Log.e("InfoSQL","Erreur sqLite"+ex);
             return false;
         }
 
@@ -106,7 +103,7 @@ public class manageBdd extends SQLiteOpenHelper
         }
         catch (SQLiteException ex)
         {
-            Log.i("InfoSQL","Erreur sqLite"+ex);
+            Log.e("InfoSQL","Erreur sqLite"+ex);
             return false;
 
         }
