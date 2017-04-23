@@ -1,6 +1,7 @@
 package fr.ldnr.androtennis;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -10,9 +11,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import misc.MenuNavigation;
 
@@ -23,6 +27,10 @@ import static java.lang.String.valueOf;
  */
 
 public class HistoricActivity extends Activity {
+
+    ArrayList<Integer> idligne=new ArrayList();
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +43,8 @@ public class HistoricActivity extends Activity {
 
         SQLiteDatabase db=data.getReadableDatabase();
 
+        String pDate="";
+
         Cursor c = db.rawQuery("SELECT * from donnees ORDER BY dateTime DESC", null);
         if(c.moveToFirst())
         {
@@ -44,18 +54,20 @@ public class HistoricActivity extends Activity {
                 Log.i("info","="+c.getString(c.getColumnIndex("result")));
                 if(c.getString(c.getColumnIndex("result")).equals("1"))
                 {
-                    ligne.setBackgroundColor(Color.GREEN);
+                    ligne.setBackgroundColor(0xFF007700);
                 }
                 else if(c.getString(c.getColumnIndex("result"))=="-1")
                 {
-                    ligne.setBackgroundColor(Color.RED);
+                    ligne.setBackgroundColor(0xFF770000);
                 }
                 else
                 {
-                    ligne.setBackgroundColor(Color.BLACK);
+                    ligne.setBackgroundColor(0xFF777777);
                 }
 
-                ((TextView) ligne.findViewById(R.id.cDate)).setText(c.getString(c.getColumnIndex("dateTime")));
+                pDate=c.getString(c.getColumnIndex("dateTime"));
+                pDate=pDate.substring(0,10);
+                ((TextView) ligne.findViewById(R.id.cDate)).setText(pDate);
                 ((TextView) ligne.findViewById(R.id.cNom)).setText(c.getString(c.getColumnIndex("noma")));
                 ((TextView) ligne.findViewById(R.id.cSet1)).setText(c.getString(c.getColumnIndex("set1j")));
                 ((TextView) ligne.findViewById(R.id.cSet1A)).setText(c.getString(c.getColumnIndex("set1a")));
@@ -65,6 +77,7 @@ public class HistoricActivity extends Activity {
                 ((TextView) ligne.findViewById(R.id.cSet3A)).setText(c.getString(c.getColumnIndex("set3a")));
                 ((TextView) ligne.findViewById(R.id.cLieu)).setText(c.getString(c.getColumnIndex("lieu")));
                 table.addView(ligne);
+                idligne.add(Integer.parseInt(c.getString(c.getColumnIndex("id"))));
             }
         }
         c.close();
@@ -101,5 +114,20 @@ public class HistoricActivity extends Activity {
             default:
                 return false;
         }
+    }
+
+    public void onHistoricClick(View view)
+    {
+        Log.i("Info=","On est dans la listener");
+        //Intent intent=new Intent(HistoricActivity.this,PerformShowActivity.class);
+        TableLayout tl=(TableLayout) findViewById(R.id.tablehisto);
+        TableRow trow=(TableRow) view.getParent();
+        Log.i("InfoLigne","=nl="+tl.indexOfChild(trow));
+        int cindex=tl.indexOfChild(trow);
+        cindex-=1;
+
+        Intent intent=new Intent(HistoricActivity.this, PerformShowActivity.class);
+        intent.putExtra("id",idligne.get(cindex).toString());
+        startActivityForResult(intent,0);
     }
 }
