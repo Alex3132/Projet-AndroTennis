@@ -36,6 +36,7 @@
         <activity android:name=".AboutActivity" android:screenOrientation="landscape"></activity>
         <activity android:name=".AddPerformActivity" android:screenOrientation="landscape"></activity>
 <activity android:name=".ModifyPerformActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".PerformTestActivity" android:screenOrientation="landscape"></activity>
     </application>
 
 

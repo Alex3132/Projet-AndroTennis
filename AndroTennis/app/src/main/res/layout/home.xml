@@ -228,8 +228,13 @@ android:clickable="true"
                     android:layout_height="wrap_content"
                     android:onClick="onExportButtonClicked"
                     android:text="@string/menu_export"/>
-
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="testPerform"
+                    android:onClick="testPerform"/>
             </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
