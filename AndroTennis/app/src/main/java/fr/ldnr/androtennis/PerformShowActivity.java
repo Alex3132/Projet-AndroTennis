@@ -2,12 +2,14 @@ package fr.ldnr.androtennis;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -133,21 +135,45 @@ Intent intent = new Intent(PerformShowActivity.this, ModifyPerformActivity.class
     }
     public void onDeletePerformButtonClicked(View view){
 
-        try{
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(PerformShowActivity.this, R.style.myDialog);
+        builder1.setMessage(R.string.delete_alert_message);
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                R.string.delete_yes,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        try{
 
 
-            manageBdd manager = new manageBdd(this);
+                            manageBdd manager = new manageBdd(PerformShowActivity.this);
 
-            manager.deletePerform(Integer.parseInt(id));
-            manager.close();
+                            manager.deletePerform(Integer.parseInt(PerformShowActivity.this.id));
+                            manager.close();
 
-            Toast.makeText(this,"Supprimé",Toast.LENGTH_LONG).show();
+                            Toast.makeText(PerformShowActivity.this,"Supprimé",Toast.LENGTH_LONG).show();
 
-        }catch(SQLiteException E){
+                        }catch(SQLiteException E){
 
 
-            Log.i("Erreur SQL", "Erreur : "+E.getMessage());
-        }
+                            Log.i("Erreur SQL", "Erreur : "+E.getMessage());
+                        }
+                        dialog.cancel();
+                    }
+                });
+
+        builder1.setNegativeButton(
+                R.string.delete_no,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+
+        alert11.show();
+
 
     }
 
