@@ -7,13 +7,10 @@
     <string name="menu_export">Export data</string>
     <string name="home_text">AndroTennis : Enables you to see at a glance your latest performance.</string>
     <string name="home_about">About</string>
-
     <string name="home_add_perform">Add Performance</string>
     <string name="home_see_perform">See Performances</string>
     <string name="home_last_perform">Lastest data :</string>
-
     <string name="add_perform_add_text_noma">Opponent name or training</string>
-
     <string name="add_perform_add_text_location">Place of Performance</string>
     <string name="add_perform_add_text_date">Date of performance</string>
     <string name="add_perform_add_text_result">Victoiry</string>
@@ -25,15 +22,34 @@
     <string name="add_perform_add_text_set3a">Score Set 3 opponent\'s</string>
     <string name="add_perform_button_text">Add</string>
     <string name="add_perform_date_type">DD-MM-YYYY</string>
-
     <string name="about_main">AndroTennis &#169;2017</string>
     <string name="about_authors">Authors : Alexis Zueras, Tristan Fongaro, Jean Mariette.</string>
     <string name="about_else">Completed For the LDNR. Under the tutelage of Michael Blanchard</string>
-
-
-
     <string name="splash_text">AndroTennis helps you to improve</string>
     <string name="splash_text_2">Don\'t forget to record your performances!</string>
     <string name="splash_text_3">The graph gives an overview of the latest results</string>
     <string name="splash_text_4">Be patient and rigorous, you will get there</string>
+    <string name="modify_perform_button">Modify</string>
+    <string name="delete_perform_button">Delete</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="need_name">Enter a name</string>
+    <string name="need_good_date">Wrong date format</string>
+    <string name="added_perform">Perform added</string>
+    <string name="home_adversary">Opponent : </string>
+    <string name="home_date"> Date : </string>
+    <string name="modify_done">Modified entry !</string>
+    <string name="result_victory">Result : Victory</string>
+    <string name="result_loose">Result : Defeat</string>
+    <string name="score_set1j">Score Set 1 : </string>
+    <string name="score_set1a">Opponent Score Set 1 : </string>
+    <string name="score_set2j">Score Set 2 : </string>
+    <string name="score_set2a">Opponent Score Set 2 : </string>
+    <string name="score_set3j">Score Set 3 : </string>
+    <string name="score_set3a">Opponent Score Set 3 : </string>
+    <string name="location">Place : </string>
+    <string name="adversary_name">Name : </string>
+    <string name="delete_alert_message">Are you sure you want to delete ?</string>
+    <string name="delete_yes">Yes</string>
+    <string name="delete_no">No</string>
+    <string name="modify_dialog_message">Are you sure ?</string>
 </resources>
