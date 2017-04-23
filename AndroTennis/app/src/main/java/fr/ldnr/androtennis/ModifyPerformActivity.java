@@ -25,10 +25,7 @@ import misc.MenuNavigation;
 public class ModifyPerformActivity extends Activity {
 
 
-    //views
 
-
-    //datas
 
 
     private String id = "";
@@ -111,7 +108,7 @@ db.close();c.close();
                 return true;
 
             case R.id.home_menu_export:
-                /*TODO : Add export code */
+
                 return true;
 
             case R.id.home_menu_welcome:
@@ -121,6 +118,7 @@ db.close();c.close();
         }
     }
 
+    //modify button clicked a popup will be shown
 
     public void onModifyButtonConfirmClicked(View view) {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(ModifyPerformActivity.this, R.style.myDialog);
@@ -146,7 +144,7 @@ db.close();c.close();
 
                         if (!viewnom.getText().toString().isEmpty()) {
 
-                            if (viewdate.getText().toString().matches("^\\d{2}[ :\\.-/]{1}\\d{2}[ :\\.-/]{1}\\d{4}$")) {
+                            if (viewdate.getText().toString().matches("^\\d{2}[ :\\.\\-\\/]{1}\\d{2}[ :\\.\\-\\/]{1}\\d{4}$")) {
 
 
                                 try {
@@ -202,7 +200,7 @@ db.close();c.close();
 
 
     }
-
+//press cancel end the activity
     public void onCancelButtonClicked(View view){
 
         finish();
@@ -224,10 +222,11 @@ db.close();c.close();
 
     }
 
+    //to make dateTime conversion easily
     public String getUSDate(String date) {
 
 
-            if(!date.isEmpty()&& date.matches("^\\d{2}[ :\\.-/]{1}\\d{2}[ :\\.-/]{1}\\d{4}$")){
+            if(!date.isEmpty()&& date.matches("^\\d{2}[ :\\.\\-\\/]{1}\\d{2}[ :\\.\\-\\/]{1}\\d{4}$")){
 
                 Log.i("Chainecarac", date);
 

@@ -236,7 +236,7 @@ public class AddPerformActivity extends Activity {
         EditText date = (EditText) findViewById(view);
 
         String dateDump = date.getText().toString();
-        if(!dateDump.isEmpty()&& dateDump.matches("^\\d{2}[ :\\.-/]{1}\\d{2}[ :\\.-/]{1}\\d{4}$")){
+        if(!dateDump.isEmpty()&& dateDump.matches("^\\d{2}[ :\\.\\-\\/]{1}\\d{2}[ :\\.\\-\\/]{1}\\d{4}$")){
 
             Log.i("Chainecarac", dateDump);
 
