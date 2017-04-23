@@ -1,11 +1,13 @@
 package fr.ldnr.androtennis;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -121,56 +123,82 @@ db.close();c.close();
 
 
     public void onModifyButtonConfirmClicked(View view) {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(ModifyPerformActivity.this, R.style.myDialog);
+        builder1.setMessage(R.string.modify_dialog_message);
+        builder1.setCancelable(true);
 
-        EditText viewnom = (EditText) findViewById(R.id.modify_perform_edit_noma);
-        EditText viewset1j = (EditText) findViewById(R.id.modify_perform_edit_set1j);
-        EditText viewset2j = (EditText) findViewById(R.id.modify_perform_edit_set2j);
-        EditText viewset3j = (EditText) findViewById(R.id.modify_perform_edit_set3j);
-        EditText viewset1a = (EditText) findViewById(R.id.modify_perform_edit_set1a);
-        EditText viewset2a = (EditText) findViewById(R.id.modify_perform_edit_set2a);
-        EditText viewset3a = (EditText) findViewById(R.id.modify_perform_edit_set3a);
-        CheckBox viewvictory = (CheckBox) findViewById(R.id.modify_perform_edit_result);
-        EditText viewdate = (EditText) findViewById(R.id.modify_perform_edit_date);
-        EditText viewlocation = (EditText) findViewById(R.id.modify_perform_edit_location);
-
-        if (!viewnom.getText().toString().isEmpty()) {
-
-            if (viewdate.getText().toString().matches("^\\d{2}[ :\\.-/]{1}\\d{2}[ :\\.-/]{1}\\d{4}$")) {
+        builder1.setPositiveButton(
+                R.string.delete_yes,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
 
 
-                try {
+                        EditText viewnom = (EditText) findViewById(R.id.modify_perform_edit_noma);
+                        EditText viewset1j = (EditText) findViewById(R.id.modify_perform_edit_set1j);
+                        EditText viewset2j = (EditText) findViewById(R.id.modify_perform_edit_set2j);
+                        EditText viewset3j = (EditText) findViewById(R.id.modify_perform_edit_set3j);
+                        EditText viewset1a = (EditText) findViewById(R.id.modify_perform_edit_set1a);
+                        EditText viewset2a = (EditText) findViewById(R.id.modify_perform_edit_set2a);
+                        EditText viewset3a = (EditText) findViewById(R.id.modify_perform_edit_set3a);
+                        CheckBox viewvictory = (CheckBox) findViewById(R.id.modify_perform_edit_result);
+                        EditText viewdate = (EditText) findViewById(R.id.modify_perform_edit_date);
+                        EditText viewlocation = (EditText) findViewById(R.id.modify_perform_edit_location);
 
-                    /*TODO:Add code for update*/
+                        if (!viewnom.getText().toString().isEmpty()) {
 
-                    try {
+                            if (viewdate.getText().toString().matches("^\\d{2}[ :\\.-/]{1}\\d{2}[ :\\.-/]{1}\\d{4}$")) {
 
-                        manageBdd manager = new manageBdd(this);
 
-                        manager.majPerform(Integer.parseInt(id), viewnom.getText().toString(), Integer.parseInt(viewset1j.getText().toString()), Integer.parseInt(viewset1a.getText().toString()), Integer.parseInt(viewset2j.getText().toString()), Integer.parseInt(viewset2a.getText().toString()), Integer.parseInt(viewset3j.getText().toString()), Integer.parseInt(viewset3a.getText().toString()), getVictory(viewvictory), viewlocation.getText().toString(), getUSDate(viewdate.getText().toString()));
+                                try {
 
-                        Toast.makeText(this, getResources().getString(R.string.modify_done), Toast.LENGTH_LONG).show();
-                    } catch (SQLiteException E) {
 
-                        Log.i("Erreur SQL", "Erreur : " + E.getMessage());
 
+                                    try {
+
+                                        manageBdd manager = new manageBdd(ModifyPerformActivity.this);
+
+                                        manager.majPerform(Integer.parseInt(ModifyPerformActivity.this.id), viewnom.getText().toString(), Integer.parseInt(viewset1j.getText().toString()), Integer.parseInt(viewset1a.getText().toString()), Integer.parseInt(viewset2j.getText().toString()), Integer.parseInt(viewset2a.getText().toString()), Integer.parseInt(viewset3j.getText().toString()), Integer.parseInt(viewset3a.getText().toString()), getVictory(viewvictory), viewlocation.getText().toString(), getUSDate(viewdate.getText().toString()));
+
+                                        Toast.makeText(ModifyPerformActivity.this, getResources().getString(R.string.modify_done), Toast.LENGTH_LONG).show();
+                                    } catch (SQLiteException E) {
+
+                                        Log.i("Erreur SQL", "Erreur : " + E.getMessage());
+
+                                    }
+
+                                } catch (SQLiteException E) {
+
+                                    Log.i("Erreur SQL", "Erreur : " + E.getMessage());
+
+                                }
+
+                            } else {
+
+                                Toast.makeText(ModifyPerformActivity.this, getResources().getString(R.string.need_good_date), Toast.LENGTH_LONG).show();
+                            }
+
+
+                        } else {
+
+                            Toast.makeText(ModifyPerformActivity.this, getResources().getString(R.string.need_name), Toast.LENGTH_LONG).show();
+                        }
+
+                        dialog.cancel();
                     }
+                });
 
-                } catch (SQLiteException E) {
+        builder1.setNegativeButton(
+                R.string.delete_no,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
 
-                    Log.i("Erreur SQL", "Erreur : " + E.getMessage());
+        AlertDialog alert11 = builder1.create();
 
-                }
+        alert11.show();
 
-            } else {
-
-                Toast.makeText(this, getResources().getString(R.string.need_good_date), Toast.LENGTH_LONG).show();
-            }
-
-
-        } else {
-
-            Toast.makeText(this, getResources().getString(R.string.need_name), Toast.LENGTH_LONG).show();
-        }
 
 
     }
