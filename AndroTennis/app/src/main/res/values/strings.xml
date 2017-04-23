@@ -36,4 +36,28 @@
     <string name="splash_text_2">N\'oubliez pas d\'enregistrer vos performances!</string>
     <string name="splash_text_3">Le graphique donne un aperçu des derniers résultats</string>
     <string name="splash_text_4">Soyez patient et rigoureux, vous y arriverez</string>
+
+<string name="modify_perform_button">Modifier</string>
+    <string name="delete_perform_button">Supprimer</string>
+    <string name="cancel_button">Annuler</string>
+    <string name="need_name">Vous devez ajouter un nom!</string>
+    <string name="need_good_date">Format de date incorrect</string>
+    <string name="added_perform">Performance ajoutée</string>
+    <string name="home_adversary">Adversaire : </string>
+    <string name="home_date"> Date : </string>
+    <string name="modify_done">Entrée modifiée!</string>
+    <string name="result_victory">Résultat : Victoire</string>
+    <string name="result_loose">Résultat : Défaite</string>
+    <string name="score_set1j">Score Set 1 : </string>
+    <string name="score_set1a">Score Set 1 Adversaire : </string>
+    <string name="score_set2j">Score Set 2 : </string>
+    <string name="score_set2a">Score Set 2 Adversaire : </string>
+    <string name="score_set3j">Score Set 3 : </string>
+    <string name="score_set3a">Score Set 3 Adversaire : </string>
+    <string name="location">Lieu : </string>
+    <string name="adversary_name">Nom : </string>
+    <string name="delete_alert_message">Êtes vous sur de vouloir supprimer?</string>
+    <string name="delete_yes">Oui</string>
+    <string name="delete_no">Non</string>
+    <string name="modify_dialog_message">Êtes vous sûr?</string>
 </resources>
