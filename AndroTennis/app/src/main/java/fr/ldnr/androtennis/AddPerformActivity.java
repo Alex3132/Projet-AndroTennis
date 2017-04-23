@@ -1,12 +1,14 @@
 package fr.ldnr.androtennis;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -87,31 +89,39 @@ public class AddPerformActivity extends Activity {
     }
 
 
-
+//insert the datas in the bdd
 
     public void onAddPerformDataButtonClicked(View view) {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(AddPerformActivity.this, R.style.myDialog);
+        builder1.setMessage(R.string.add_confirm);
+        builder1.setCancelable(true);
 
-        this.noma=addNomA(viewnom);
-        this.set1j=addset(viewset1j);
-        this.set2j=addset(viewset2j);
-        this.set3j=addset(viewset3j);
-        this.set1a=addset(viewset1a);
-        this.set2a=addset(viewset2a);
-        this.set3a=addset(viewset3a);
-        this.date=getDate(viewdate);
-        this.location=addLocation(viewlocation);
-        this.victory=addVictory(viewvictory);
+        //yes button
+        builder1.setPositiveButton(
+                R.string.delete_yes,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+        AddPerformActivity.this.noma=addNomA(viewnom);
+       AddPerformActivity.this.set1j=addset(viewset1j);
+        AddPerformActivity.this.set2j=addset(viewset2j);
+        AddPerformActivity.this.set3j=addset(viewset3j);
+       AddPerformActivity.this.set1a=addset(viewset1a);
+        AddPerformActivity.this.set2a=addset(viewset2a);
+       AddPerformActivity.this.set3a=addset(viewset3a);
+        AddPerformActivity.this.date=getDate(viewdate);
+        AddPerformActivity.this.location=addLocation(viewlocation);
+                        AddPerformActivity.this.victory=addVictory(viewvictory);
 
 
-        if(this.noma!=""){
+        if(AddPerformActivity.this.noma!=""){
 
             try {
-                manageBdd manager = new manageBdd(this);
+                manageBdd manager = new manageBdd(AddPerformActivity.this);
                 SQLiteDatabase db= manager.getWritableDatabase();
                 if(!date.equals("")){
                 manager.insertPerform(noma, set1j, set1a, set2j, set2a, set3j, set3a, victory, location, date);
                     Log.i("InfoinsertPerform", "Données insérées");
-                    Toast.makeText(this,getResources().getString(R.string.added_perform), Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddPerformActivity.this,getResources().getString(R.string.added_perform), Toast.LENGTH_LONG).show();
                    SQLiteDatabase dbm= manager.getReadableDatabase();
 
                     Cursor c=dbm.rawQuery("SELECT * FROM donnees",null);
@@ -124,7 +134,7 @@ public class AddPerformActivity extends Activity {
                     }
             }else{
 
-                    Toast.makeText(this, getResources().getString(R.string.need_good_date), Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddPerformActivity.this, getResources().getString(R.string.need_good_date), Toast.LENGTH_LONG).show();
                 }
             }catch (SQLiteException E){
 
@@ -132,10 +142,30 @@ public class AddPerformActivity extends Activity {
             }
         }else {
 
-            Toast.makeText(this, getResources().getString(R.string.need_name), Toast.LENGTH_LONG).show();
+            Toast.makeText(AddPerformActivity.this, getResources().getString(R.string.need_name), Toast.LENGTH_LONG).show();
         }
+                        dialog.cancel();
+
+                    }
+                });
+//no button
+        builder1.setNegativeButton(
+                R.string.delete_no,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+
+        alert11.show();
+
 
     }
+
+
 
 
     private String addNomA(int view) {
@@ -199,7 +229,7 @@ public class AddPerformActivity extends Activity {
         }
     }
 
-
+//need the date in dd-mm-yyyy format to work
     private String getDate(int view) {
 
 
@@ -228,6 +258,11 @@ public class AddPerformActivity extends Activity {
             return "";
         }
 
+    }
+
+    public void onCancelButtonClickedAddPerform(View view){
+
+        finish();
     }
 
 
