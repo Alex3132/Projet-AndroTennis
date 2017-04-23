@@ -7,13 +7,10 @@
     <string name="menu_export">Exporter données</string>
     <string name="home_text">AndroTennis : Vous permet de connaître d\'un coup d\'oeil vos dernières performances.</string>
     <string name="home_about">A propos</string>
-
     <string name="home_add_perform">Ajouter Performance</string>
     <string name="home_see_perform">Voir les Performances</string>
     <string name="home_last_perform">Les dernières données :</string>
-
     <string name="add_perform_add_text_noma">Nom adversaire ou entraînement</string>
-
     <string name="add_perform_add_text_location">Lieu de la performance</string>
     <string name="add_perform_add_text_date">Date de la performance</string>
     <string name="add_perform_add_text_result">Victoire</string>
@@ -25,19 +22,14 @@
     <string name="add_perform_add_text_set3a">Score Set 3 adversaire</string>
     <string name="add_perform_button_text">Ajouter</string>
     <string name="add_perform_date_type">JJ-MM-AAAA</string>
-
     <string name="about_main">AndroTennis &#169;2017</string>
     <string name="about_authors">Auteurs : Alexis Zueras, Tristan Fongaro, Jean Mariette.</string>
     <string name="about_else">Réalisé Pour la LDNR. Sous la tutelle de Michael Blanchard</string>
-
-
-
     <string name="splash_text">AndroTennis vous aide à vous améliorer</string>
     <string name="splash_text_2">N\'oubliez pas d\'enregistrer vos performances!</string>
     <string name="splash_text_3">Le graphique donne un aperçu des derniers résultats</string>
     <string name="splash_text_4">Soyez patient et rigoureux, vous y arriverez</string>
-
-<string name="modify_perform_button">Modifier</string>
+    <string name="modify_perform_button">Modifier</string>
     <string name="delete_perform_button">Supprimer</string>
     <string name="cancel_button">Annuler</string>
     <string name="need_name">Vous devez ajouter un nom!</string>
@@ -60,5 +52,4 @@
     <string name="delete_yes">Oui</string>
     <string name="delete_no">Non</string>
     <string name="modify_dialog_message">Êtes vous sûr?</string>
-    <string name="bidon">bidon</string>
 </resources>
