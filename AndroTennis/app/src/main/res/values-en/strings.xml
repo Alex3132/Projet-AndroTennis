@@ -52,4 +52,6 @@
     <string name="delete_yes">Yes</string>
     <string name="delete_no">No</string>
     <string name="modify_dialog_message">Are you sure ?</string>
+    <string name="histo_loc">Place</string>
+    <string name="add_confirm">Add ?</string>
 </resources>

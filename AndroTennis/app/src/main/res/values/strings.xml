@@ -52,4 +52,14 @@
     <string name="delete_yes">Oui</string>
     <string name="delete_no">Non</string>
     <string name="modify_dialog_message">Êtes vous sûr?</string>
+    <string name="histo_date">Date</string>
+    <string name="histo_nom">Nom</string>
+    <string name="histo_set1j">Set1</string>
+    <string name="histo_set1a">Set 1 adv.</string>
+    <string name="histo_set2j">Set2</string>
+    <string name="histo_set2a">Set 2 adv.</string>
+    <string name="histo_set3j">Set3</string>
+    <string name="histo_set3a">Set 3 adv.</string>
+    <string name="histo_loc">Lieu</string>
+    <string name="add_confirm">Ajouter ?</string>
 </resources>
