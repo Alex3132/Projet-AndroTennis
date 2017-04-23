@@ -130,18 +130,20 @@ public class PerformActivity extends Activity {
                     paint.setARGB(255,0,255,0);
                     canvas.drawRect((flarg*l)+10,100.0f,(flarg*l)+flarg,200,paint);
                     paint.setTextSize(larg/100);
-                    canvas.drawText(lDate[l],cxLabel, cyLabel, paint);
                     cxLabel=(int) (flarg*l);
                     cxLabel+=10;
+                    canvas.drawText(lDate[l],cxLabel, cyLabel, paint);
+                    Log.i("cxLabel","="+cxLabel);
                 }
                 else if(valeur[l]==-1)
                 {
                     paint.setARGB(255,255,0,0);
                     canvas.drawRect((flarg*l)+10,200.0f,(flarg*l)+flarg,300,paint);
                     paint.setTextSize(larg/100);
-                    canvas.drawText(lDate[l],cxLabel, cyLabel, paint);
                     cxLabel=(int) (flarg*l);
                     cxLabel+=10;
+                    canvas.drawText(lDate[l],cxLabel, cyLabel, paint);
+                    Log.i("cxLabel","="+cxLabel);
                 }
             }
             //canvas.drawRect(50.0f,50.0f,100.0f,100.0f,paint);
