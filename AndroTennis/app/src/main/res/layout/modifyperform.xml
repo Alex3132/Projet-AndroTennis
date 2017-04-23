@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<LinearLayout
 
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:orientation="horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="0dp"
+        android:layout_weight="3"
         android:layout_height="match_parent"
         >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -139,21 +145,24 @@
 
 
             android:inputType="text" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
         <Button
             android:id="@+id/add_perform_edit_valid"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/modify_perform_button"
             android:onClick="onModifyButtonConfirmClicked"
             />
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onCancelButtonClicked"
             android:text="@string/cancel_button"/>
-</LinearLayout>
     </LinearLayout>
-</ScrollView>
+</LinearLayout>
