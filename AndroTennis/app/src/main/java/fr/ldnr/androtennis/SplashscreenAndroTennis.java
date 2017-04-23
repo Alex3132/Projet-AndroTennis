@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 
 public class SplashscreenAndroTennis extends Activity {
 
+    //disappear after 5 secs
 
     private static int SPLASH_TIME_OUT= 5000;
     @Override
@@ -19,7 +20,8 @@ public class SplashscreenAndroTennis extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.splashscreen);
-
+        //creation of the bdd
+manageBdd manager= new manageBdd(this);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

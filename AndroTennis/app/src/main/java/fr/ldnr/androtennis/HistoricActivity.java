@@ -46,8 +46,37 @@ public class HistoricActivity extends Activity {
         String pDate="";
 
         Cursor c = db.rawQuery("SELECT * from donnees ORDER BY dateTime DESC", null);
-        if(c.moveToFirst())
+        if(c.moveToFirst()){
+
+            TableRow lignedepart=(TableRow) inflater.inflate(R.layout.table_ligne,null);
+        Log.i("info","="+c.getString(c.getColumnIndex("result")));
+        if(c.getString(c.getColumnIndex("result")).equals("1"))
         {
+            lignedepart.setBackgroundColor(0xFF007700);
+        }
+        else if(c.getString(c.getColumnIndex("result")).equals("-1"))
+        {
+            lignedepart.setBackgroundColor(0xFF770000);
+        }
+        else
+        {
+            lignedepart.setBackgroundColor(0xFF777777);
+        }
+
+        pDate=c.getString(c.getColumnIndex("dateTime"));
+        pDate=pDate.substring(0,10);
+        ((TextView) lignedepart.findViewById(R.id.cDate)).setText(pDate);
+        ((TextView) lignedepart.findViewById(R.id.cNom)).setText(c.getString(c.getColumnIndex("noma")));
+        ((TextView) lignedepart.findViewById(R.id.cSet1)).setText(c.getString(c.getColumnIndex("set1j")));
+        ((TextView) lignedepart.findViewById(R.id.cSet1A)).setText(c.getString(c.getColumnIndex("set1a")));
+        ((TextView) lignedepart.findViewById(R.id.cSet2)).setText(c.getString(c.getColumnIndex("set2j")));
+        ((TextView) lignedepart.findViewById(R.id.cSet2A)).setText(c.getString(c.getColumnIndex("set2a")));
+        ((TextView) lignedepart.findViewById(R.id.cSet3)).setText(c.getString(c.getColumnIndex("set3j")));
+        ((TextView) lignedepart.findViewById(R.id.cSet3A)).setText(c.getString(c.getColumnIndex("set3a")));
+        ((TextView) lignedepart.findViewById(R.id.cLieu)).setText(c.getString(c.getColumnIndex("lieu")));
+        table.addView(lignedepart);
+        idligne.add(Integer.parseInt(c.getString(c.getColumnIndex("id"))));
+        
             while (c.moveToNext())
             {
                 TableRow ligne=(TableRow) inflater.inflate(R.layout.table_ligne,null);
@@ -56,7 +85,7 @@ public class HistoricActivity extends Activity {
                 {
                     ligne.setBackgroundColor(0xFF007700);
                 }
-                else if(c.getString(c.getColumnIndex("result"))=="-1")
+                else if(c.getString(c.getColumnIndex("result")).equals("-1"))
                 {
                     ligne.setBackgroundColor(0xFF770000);
                 }
