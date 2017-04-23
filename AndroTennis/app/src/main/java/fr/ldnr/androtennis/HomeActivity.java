@@ -155,6 +155,8 @@ public class HomeActivity extends Activity {
 
                         fw.write(xmlToWrite.getBytes());
                         fw.close();
+
+                        Toast.makeText(HomeActivity.this, "Données exportées : "+dir.toString()+f.toString(), Toast.LENGTH_LONG).show();
                     }
                 } else {
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
@@ -168,6 +170,7 @@ public class HomeActivity extends Activity {
                     fw.write(getDatabaseXml().getBytes());
                     fw.close();
 
+                    Toast.makeText(HomeActivity.this, "Données exportées : "+dir2.toString()+f.toString(), Toast.LENGTH_LONG).show();
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -179,8 +182,7 @@ public class HomeActivity extends Activity {
         } else {
 
             Log.e("HomeActivity", "noSDcard");
-        }
-    }
+    }}
 
 // to get the sqlite database as a xml string
     public String getDatabaseXml() {
@@ -252,7 +254,6 @@ public class HomeActivity extends Activity {
             return "";
         }
 
-        /*TODO: verify export code*/
 
 
     }
