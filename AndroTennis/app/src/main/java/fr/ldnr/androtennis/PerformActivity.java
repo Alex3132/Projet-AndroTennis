@@ -117,7 +117,7 @@ public class PerformActivity extends Activity {
             paint.setARGB(255,0,0,255);
 
             int cxLabel=10;
-            int cyLabel=80;
+            //int cyLabel=80;
 
             for(int l=0;l<valeur.length;l++)
             {
@@ -137,7 +137,7 @@ public class PerformActivity extends Activity {
                     paint.setTextSize(larg/100);
                     cxLabel=(int) (flarg*l);
                     cxLabel+=10;
-                    canvas.drawText(lDate[l],sizex+cxLabel, cyLabel, paint);
+                    canvas.drawText(lDate[l],sizex+cxLabel, middley-sizey-20, paint);
                     Log.i("cxLabel","="+cxLabel);
                 }
                 else if(valeur[l]==-1)
@@ -147,7 +147,7 @@ public class PerformActivity extends Activity {
                     paint.setTextSize(larg/100);
                     cxLabel=(int) (flarg*l);
                     cxLabel+=10;
-                    canvas.drawText(lDate[l],sizex+cxLabel, cyLabel, paint);
+                    canvas.drawText(lDate[l],sizex+cxLabel, middley-sizey-20, paint);
                     Log.i("cxLabel","="+cxLabel);
                 }
             }
