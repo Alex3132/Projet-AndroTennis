@@ -110,7 +110,7 @@
             <Button
                 android:id="@+id/button_about"
 
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:onClick="onAboutButtonClicked"
@@ -211,7 +211,7 @@ android:clickable="true"
                 <Button
                     android:id="@+id/home_add_perform"
 
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="OnAddPerformButtonClicked"
                     android:text="@string/home_add_perform" />
@@ -219,17 +219,17 @@ android:clickable="true"
                 <Button
                     android:id="@+id/home_see_perform"
 
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="onSeePerformButtonClicked"
                     android:text="@string/home_see_perform" />
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="onExportButtonClicked"
                     android:text="@string/menu_export"/>
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="testPerform"
                     android:onClick="testPerform"/>
