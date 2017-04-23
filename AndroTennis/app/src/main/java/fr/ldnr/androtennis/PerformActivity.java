@@ -40,11 +40,25 @@ public class PerformActivity extends Activity {
         Cursor c = db.rawQuery("SELECT * from donnees ORDER BY dateTime DESC LIMIT 10", null);
         if(c.moveToFirst())
         {
+            valeur[index]=Integer.parseInt(c.getString(c.getColumnIndex("result")));
+            lDate[index]=c.getString(c.getColumnIndex("dateTime")).substring(0,10);
+            Log.i("Info","index="+index);
+            index++;
             while (c.moveToNext())
             {
                 valeur[index]=Integer.parseInt(c.getString(c.getColumnIndex("result")));
                 lDate[index]=c.getString(c.getColumnIndex("dateTime")).substring(0,10);
+                Log.i("Info","index="+index);
                 index++;
+            }
+        }
+
+        if(index<10)
+        {
+            for(int i=index;i<10;i++)
+            {
+                valeur[index]=0;
+                lDate[index]="";
             }
         }
 
@@ -120,12 +134,12 @@ public class PerformActivity extends Activity {
                     cxLabel=(int) (flarg*l);
                     cxLabel+=10;
                 }
-                else
+                else if(valeur[l]==-1)
                 {
                     paint.setARGB(255,255,0,0);
                     canvas.drawRect((flarg*l)+10,200.0f,(flarg*l)+flarg,300,paint);
                     paint.setTextSize(larg/100);
-                    //canvas.drawText(lDate[l],cxLabel, cyLabel, paint);
+                    canvas.drawText(lDate[l],cxLabel, cyLabel, paint);
                     cxLabel=(int) (flarg*l);
                     cxLabel+=10;
                 }
