@@ -122,27 +122,32 @@ public class PerformActivity extends Activity {
             for(int l=0;l<valeur.length;l++)
             {
                 int larg=getWidth();
+                int hauteur=getHeight();
+                int sizey=getHeight()/4;
+                int middley=getHeight()/2;
                 float flarg=larg/10-10;
+                int sizex=(larg-((int)(flarg)*10+90))/2;
+                Log.i("sizeX","="+sizex);
                 Log.i("Info largeur=","="+larg);
                 Log.i("Info flarg","flarg="+flarg);
                 if(valeur[l]==1)
                 {
                     paint.setARGB(255,0,255,0);
-                    canvas.drawRect((flarg*l)+10,100.0f,(flarg*l)+flarg,200,paint);
+                    canvas.drawRect(sizex+(flarg*l)+10,middley-sizey,(flarg*l)+flarg,middley,paint);
                     paint.setTextSize(larg/100);
                     cxLabel=(int) (flarg*l);
                     cxLabel+=10;
-                    canvas.drawText(lDate[l],cxLabel, cyLabel, paint);
+                    canvas.drawText(lDate[l],sizex+cxLabel, cyLabel, paint);
                     Log.i("cxLabel","="+cxLabel);
                 }
                 else if(valeur[l]==-1)
                 {
                     paint.setARGB(255,255,0,0);
-                    canvas.drawRect((flarg*l)+10,200.0f,(flarg*l)+flarg,300,paint);
+                    canvas.drawRect(sizex+(flarg*l)+10,middley,(flarg*l)+flarg,middley+sizey,paint);
                     paint.setTextSize(larg/100);
                     cxLabel=(int) (flarg*l);
                     cxLabel+=10;
-                    canvas.drawText(lDate[l],cxLabel, cyLabel, paint);
+                    canvas.drawText(lDate[l],sizex+cxLabel, cyLabel, paint);
                     Log.i("cxLabel","="+cxLabel);
                 }
             }
