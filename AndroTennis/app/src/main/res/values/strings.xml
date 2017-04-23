@@ -60,4 +60,5 @@
     <string name="delete_yes">Oui</string>
     <string name="delete_no">Non</string>
     <string name="modify_dialog_message">Êtes vous sûr?</string>
+    <string name="bidon">bidon</string>
 </resources>
